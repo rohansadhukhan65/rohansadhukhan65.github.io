@@ -1,6 +1,6 @@
 {
   "name": "rohan-portfolio-ui-react",
-  "homepage": "https://rohansadhukhan65.github.io/rohan-codes/",
+  "homepage": "https://rohansadhukhan65.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.10",
     "gh-pages": "^6.3.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.2",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
