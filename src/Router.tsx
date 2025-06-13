@@ -1,21 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
+import { Suspense, lazy } from 'react'
 
+const Home = lazy(() => import('./pages/Home.tsx'))
+const Construct = lazy(() => import('./pages/Construct.tsx'))
 const Router : React.FC = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Construct />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
 
-const Home : React.FC = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  ) 
-}
+ 
 
 export default Router
