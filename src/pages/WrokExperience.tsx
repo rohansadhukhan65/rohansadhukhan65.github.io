@@ -8,7 +8,6 @@ import {
   Card,
   CardContent,
   Collapse,
-  useTheme,
 } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { experiences } from "../storage/Experience";
@@ -23,7 +22,6 @@ import { Business } from "@mui/icons-material";
 const WorkExperience: React.FC = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const theme = useTheme();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -58,7 +56,7 @@ const WorkExperience: React.FC = () => {
   };
 
   return (
-    <Box 
+    <Box
       className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800"
       sx={{
         backgroundImage: "url('/subtle-pattern.png')",
@@ -147,8 +145,8 @@ const WorkExperience: React.FC = () => {
               <Typography
                 variant="body1"
                 className="text-gray-300 max-w-3xl mx-auto text-center mt-6 mb-16"
-                sx={{ 
-                  lineHeight: 1.8, 
+                sx={{
+                  lineHeight: 1.8,
                   letterSpacing: "0.01em",
                   fontSize: { xs: "0.95rem", md: "1rem" },
                   textShadow: "0 2px 10px rgba(0,0,0,0.2)",
@@ -191,6 +189,7 @@ const WorkExperience: React.FC = () => {
                   variants={itemVariants}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
+                 
                   className={`mb-16 relative ${
                     index % 2 === 0
                       ? "md:pr-12 md:text-right md:ml-0 md:mr-auto"
@@ -204,10 +203,12 @@ const WorkExperience: React.FC = () => {
                     sx={{
                       backgroundColor: "rgba(17, 24, 39, 0.7)",
                       backdropFilter: "blur(10px)",
-                      boxShadow: expandedId === exp.id 
-                        ? "0 15px 30px rgba(0,0,0,0.4), 0 0 15px rgba(59, 130, 246, 0.3)"
-                        : "0 8px 20px rgba(0,0,0,0.2)",
-                      transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                      boxShadow:
+                        expandedId === exp.id
+                          ? "0 15px 30px rgba(0,0,0,0.4), 0 0 15px rgba(59, 130, 246, 0.3)"
+                          : "0 8px 20px rgba(0,0,0,0.2)",
+                      transition:
+                        "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                       borderRadius: "16px",
                       position: "relative",
                       borderLeft:
@@ -254,7 +255,10 @@ const WorkExperience: React.FC = () => {
                           height: "100%",
                           borderRadius: "50%",
                           backgroundColor: "rgba(59, 130, 246, 0.4)",
-                          animation: expandedId === exp.id ? "pulse 2s infinite" : "none",
+                          animation:
+                            expandedId === exp.id
+                              ? "pulse 2s infinite"
+                              : "none",
                           "@keyframes pulse": {
                             "0%": {
                               transform: "scale(1)",
@@ -319,20 +323,24 @@ const WorkExperience: React.FC = () => {
                                 },
                               }}
                             >
-                              <Business sx={{ fontSize: 28, color: "#60a5fa" }} />
+                              <Business
+                                sx={{ fontSize: 28, color: "#60a5fa" }}
+                              />
                             </Box>
                           )}
                         </Grid>
                         <Grid sx={{ flexGrow: 1 }}>
                           <Box
                             className={`flex flex-col ${
-                              index % 2 === 0 ? "md:items-end" : "md:items-start"
+                              index % 2 === 0
+                                ? "md:items-end"
+                                : "md:items-start"
                             }`}
                           >
                             <Typography
                               variant="h5"
                               className="font-bold mb-1"
-                              sx={{ 
+                              sx={{
                                 color: "#fff",
                                 fontSize: { xs: "1.25rem", md: "1.35rem" },
                                 textShadow: "0 2px 4px rgba(0,0,0,0.3)",
@@ -344,7 +352,7 @@ const WorkExperience: React.FC = () => {
                             <Typography
                               variant="subtitle1"
                               className="mb-2 font-medium"
-                              sx={{ 
+                              sx={{
                                 color: "#60a5fa",
                                 fontSize: { xs: "1rem", md: "1.1rem" },
                               }}
@@ -357,12 +365,15 @@ const WorkExperience: React.FC = () => {
                               sx={{
                                 justifyContent: {
                                   xs: "flex-start",
-                                  md: index % 2 === 0 ? "flex-end" : "flex-start",
+                                  md:
+                                    index % 2 === 0 ? "flex-end" : "flex-start",
                                 },
                               }}
                             >
                               <Box className="flex items-center text-gray-300">
-                                <CalendarTodayIcon sx={{ fontSize: 14, mr: 0.5 }} />
+                                <CalendarTodayIcon
+                                  sx={{ fontSize: 14, mr: 0.5 }}
+                                />
                                 <Typography
                                   variant="body2"
                                   className="fira-code"
@@ -379,7 +390,9 @@ const WorkExperience: React.FC = () => {
                                 }}
                               />
                               <Box className="flex items-center text-gray-300">
-                                <LocationOnIcon sx={{ fontSize: 14, mr: 0.5 }} />
+                                <LocationOnIcon
+                                  sx={{ fontSize: 14, mr: 0.5 }}
+                                />
                                 <Typography variant="body2">
                                   {exp.location}
                                 </Typography>
@@ -407,7 +420,8 @@ const WorkExperience: React.FC = () => {
                               sx={{
                                 justifyContent: {
                                   xs: "flex-start",
-                                  md: index % 2 === 0 ? "flex-end" : "flex-start",
+                                  md:
+                                    index % 2 === 0 ? "flex-end" : "flex-start",
                                 },
                                 color: "#60a5fa",
                                 "&:hover": {
@@ -460,9 +474,9 @@ const WorkExperience: React.FC = () => {
                               timeout="auto"
                               unmountOnExit
                             >
-                              <Box 
-                                className="mt-5 pt-4" 
-                                sx={{ 
+                              <Box
+                                className="mt-5 pt-4"
+                                sx={{
                                   borderTop: "1px solid rgba(75, 85, 99, 0.4)",
                                   background: "rgba(17, 24, 39, 0.3)",
                                   borderRadius: "8px",
@@ -489,39 +503,41 @@ const WorkExperience: React.FC = () => {
                                 >
                                   Key Responsibilities:
                                 </Typography>
-                                <Box 
-                                  component="ul" 
-                                  sx={{ 
+                                <Box
+                                  component="ul"
+                                  sx={{
                                     pl: 2,
                                     listStyleType: "none",
                                   }}
                                 >
-                                  {exp.responsibilities.map((responsibility, idx) => (
-                                    <motion.li
-                                      key={idx}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{ delay: idx * 0.1 }}
-                                      className="mb-2 text-gray-300 flex items-start"
-                                      sx={{
-                                        textAlign: "left",
-                                        fontSize: "0.875rem",
-                                        lineHeight: 1.6,
-                                      }}
-                                    >
-                                      <Box 
-                                        component="span" 
-                                        sx={{ 
-                                          color: "#60a5fa", 
-                                          marginRight: "8px",
-                                          fontSize: "1rem",
+                                  {exp.responsibilities.map(
+                                    (responsibility, idx) => (
+                                      <motion.li
+                                        key={idx}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="mb-2 text-gray-300 flex items-start"
+                                        style={{
+                                          textAlign: "left",
+                                          fontSize: "0.875rem",
+                                          lineHeight: 1.6,
                                         }}
                                       >
-                                        •
-                                      </Box>
-                                      {responsibility}
-                                    </motion.li>
-                                  ))}
+                                        <Box
+                                          component="span"
+                                          sx={{
+                                            color: "#60a5fa",
+                                            marginRight: "8px",
+                                            fontSize: "1rem",
+                                          }}
+                                        >
+                                          •
+                                        </Box>
+                                        {responsibility}
+                                      </motion.li>
+                                    )
+                                  )}
                                 </Box>
 
                                 <Typography
@@ -548,7 +564,10 @@ const WorkExperience: React.FC = () => {
                                   sx={{
                                     justifyContent: {
                                       xs: "flex-start",
-                                      md: index % 2 === 0 ? "flex-end" : "flex-start",
+                                      md:
+                                        index % 2 === 0
+                                          ? "flex-end"
+                                          : "flex-start",
                                     },
                                   }}
                                 >
@@ -563,16 +582,19 @@ const WorkExperience: React.FC = () => {
                                         label={tech}
                                         size="small"
                                         sx={{
-                                          backgroundColor: "rgba(59, 130, 246, 0.15)",
+                                          backgroundColor:
+                                            "rgba(59, 130, 246, 0.15)",
                                           color: "#a5b4fc",
                                           borderRadius: "6px",
                                           fontSize: "0.75rem",
                                           height: "26px",
                                           fontWeight: 500,
-                                          border: "1px solid rgba(59, 130, 246, 0.2)",
+                                          border:
+                                            "1px solid rgba(59, 130, 246, 0.2)",
                                           transition: "all 0.2s ease",
                                           "&:hover": {
-                                            backgroundColor: "rgba(59, 130, 246, 0.25)",
+                                            backgroundColor:
+                                              "rgba(59, 130, 246, 0.25)",
                                             transform: "translateY(-2px)",
                                           },
                                         }}

@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
 
   // Handle page change
   const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
+    _: React.ChangeEvent<unknown>,
     value: number
   ) => {
     setCurrentPage(value);
