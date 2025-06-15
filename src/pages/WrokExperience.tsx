@@ -186,9 +186,13 @@ const WorkExperience: React.FC = () => {
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id}
-                  variants={itemVariants}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  // variants={itemVariants}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // viewport={{ once: true, margin: "-50px" }}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+             
                  
                   className={`mb-16 relative ${
                     index % 2 === 0
