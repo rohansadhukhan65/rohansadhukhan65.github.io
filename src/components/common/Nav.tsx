@@ -10,6 +10,8 @@ import {
   ListItem,
   ListItemText,
   ListItemButton,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { FileDownload, Menu as MenuIcon } from "@mui/icons-material";
 import { Link } from "react-router";
@@ -17,7 +19,9 @@ import { motion } from "framer-motion";
 
 const Nav: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  console.log(isMobile);
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -119,60 +123,66 @@ const Nav: React.FC = () => {
             </span>
           </Typography>
 
-          {/* Mobile menu icon */}
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-            className="md:hidden text-gray-300"
-          >
-            <MenuIcon />
-          </IconButton>
+          {/* Mobile menu icon - only show on mobile */}
+          {isMobile && (
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+              className="text-gray-300"
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
 
-          {/* Desktop navigation */}
-          <Box className="hidden md:flex space-x-6 items-center">
-            <Link
-              to="/"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/work-experience"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Work Experience
-            </Link>
-            <Link
-              to="/projects"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Projects
-            </Link>
-            <Button
-              variant="outlined"
-              startIcon={<FileDownload />}
-              className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
-              href="/resume.pdf"
-              download
-            >
-              Resume
-            </Button>
-          </Box>
+          {/* Desktop navigation - only show on desktop */}
+          {!isMobile && (
+            <Box className="flex space-x-6 items-center">
+              <Link
+                to="/"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                to="/work-experience"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Work Experience
+              </Link>
+              <Link
+                to="/projects"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Projects
+              </Link>
+              <Button
+                variant="outlined"
+                startIcon={<FileDownload />}
+                className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
+                href="/resume.pdf"
+                download
+              >
+                Resume
+              </Button>
+            </Box>
+          )}
         </Box>
       </Container>
 
       {/* Mobile drawer */}
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        {mobileDrawer}
-      </Drawer>
+      {isMobile && (
+        <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+          {mobileDrawer}
+        </Drawer>
+      )}
     </Box>
   );
 };
