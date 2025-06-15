@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import SEO from "../components/SEO";
+import SEO from "../components/common/SEO";
 
 const PublicLayout: React.FC = () => {
   return (

@@ -2,13 +2,13 @@ import React from "react";
 
 // Components
 import Header from "../components/Home/Header";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Nav from "../components/common/Nav";
+import Footer from "../components/common/Footer";
 import Projects from "../components/Home/Projects";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/common/ContactForm";
 import About from "../components/Home/About";
 import TechStack from "../components/Home/TechStack";
-import SEO from "../components/SEO";
+import SEO from "../components/common/SEO";
 
 const Home: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../components/Nav";
-import SEO from "../components/SEO";
+import Nav from "../components/common/Nav";
+import SEO from "../components/common/SEO";
 
 const About: React.FC = () => {
   return (

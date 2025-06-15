@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Container, Typography, Button } from '@mui/material'
 import { motion } from 'framer-motion'
 
-import profile from '../../assets/img/profile.png'
+import profile from '../../assets/img/main-profile.png'
 
 const Header: React.FC = () => {
   return (
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
               component="img"
               src={profile}
               alt="Rohan Sadhukhan"
-              className="rounded-full w-96 h-96 object-cover border-4 border-blue-500/30"
+              className="rounded-3xl w-80 object-cover border-4 border-blue-500/30"
             />
           </motion.div>
         </div>

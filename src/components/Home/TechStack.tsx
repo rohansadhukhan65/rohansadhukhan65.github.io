@@ -7,12 +7,12 @@ const TechStack: React.FC = () => {
   return (
     <Box id="tech" className="py-20 bg-gray-800">
       <Container maxWidth="lg">
-        <motion.div
+      <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-20"
         >
           <Typography 
             variant="h3" 
@@ -22,6 +22,9 @@ const TechStack: React.FC = () => {
               display: 'inline-block',
               left: '50%',
               transform: 'translateX(-50%)',
+              background: 'linear-gradient(90deg, #fff, #a5b4fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
               '&::after': {
                 content: '""',
                 position: 'absolute',
@@ -36,6 +39,22 @@ const TechStack: React.FC = () => {
           >
             Tech Stack
           </Typography>
+
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Typography
+              variant="body1"
+              className="text-gray-300 max-w-2xl mx-auto text-center mt-24"
+              sx={{ lineHeight: 1.8, letterSpacing: '0.01em' }}
+            >
+              Here are some of my recent projects that showcase my skills and
+              expertise. Each project represents unique challenges and solutions.
+            </Typography>
+          </motion.div> */}
         </motion.div>
 
         <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
