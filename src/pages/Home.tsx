@@ -8,6 +8,7 @@ import Projects from "../components/Home/Projects";
 import ContactForm from "../components/common/ContactForm";
 import About from "../components/Home/About";
 import TechStack from "../components/Home/TechStack";
+import Experience from "../components/Home/Experience";
 import SEO from "../components/common/SEO";
 
 const Home: React.FC = () => {
@@ -30,6 +31,9 @@ const Home: React.FC = () => {
 
       {/* Tech Stack Section */}
       <TechStack />
+
+      {/* Experience Section */}
+      <Experience />
 
       {/* Projects Section */}
       <Projects />
