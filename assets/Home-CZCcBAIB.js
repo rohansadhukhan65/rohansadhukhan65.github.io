@@ -1,1 +1,0 @@
-import{j as s}from"./index--75QINkw.js";const t=()=>s.jsxs("div",{children:[s.jsxs("h1",{className:"text-4xl font-bold fira-code",children:["Home ","==>"]}),s.jsx("p",{className:"text-2xl ",children:"This is a test "})]});export{t as default};
