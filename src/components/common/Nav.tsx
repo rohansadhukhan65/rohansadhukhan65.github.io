@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { FileDownload } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 const Nav: React.FC = () => {
   return (
     <Box

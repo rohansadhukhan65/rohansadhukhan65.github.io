@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { Suspense, lazy, useState, useEffect } from "react";
 import PublicLayout from "./Layout/PublicLayout.tsx";
 import LoadingScreen from "./components/common/LoadingScreen.tsx";
